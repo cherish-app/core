@@ -1,7 +1,7 @@
-import { pgTable, text, uuid } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, uuid } from "drizzle-orm/pg-core";
 
 export const kinships = pgTable('kinships', {
-  id: uuid('id').primaryKey(),
+  id: serial('id').primaryKey(),
   name: text('name').notNull(),
   description: text('description').notNull(),
 })

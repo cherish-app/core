@@ -1,7 +1,9 @@
+import { findAll } from "@/services/user.service";
+import { userRoute } from "./routes/user.route";
 import { Elysia } from "elysia";
-import { STATUS_CODES } from "https";
 
 const app = new Elysia()
+.use(userRoute)
 .get("/", (context) => context.set.status = 200)
 .listen(3000);
 
